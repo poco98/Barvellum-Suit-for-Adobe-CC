@@ -1,6 +1,0 @@
-{
-  "version": "1.6.2",
-  "distribution": "Windows",
-  "scope": "QtWebEngine with a simulated Adobe CEP host. Live docking in Adobe applications was not exercised.",
-  "checks": "Footer geometry, long export messages, and tab and QR status isolation."
-}
