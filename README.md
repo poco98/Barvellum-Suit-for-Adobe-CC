@@ -1,49 +1,61 @@
-# Barvellum Suit for Windows
+# Barvellum Suit for Adobe CC
 
-Version **1.6.2**. A CEP panel for generating, reading and placing barcodes and QR codes in Adobe Illustrator, Photoshop and InDesign. Built by André Filipe.
+Extensão CEP para gerar, ler, verificar e inserir códigos de barras e códigos QR no **Adobe Illustrator**, **Adobe Photoshop** e **Adobe InDesign**. Desenvolvida por André Filipe.
 
-## What you can do
+## Funcionalidades
 
-- Generate barcodes from typed values or imported product references. Check the encoded data before inserting or exporting.
-- Generate QR codes from URLs and review QR readability and link availability separately.
-- Insert editable barcode text in Illustrator or export as SVG and PNG at 600 ppi.
-- Create an XLSX import template, import product data, search by reference or barcode, and export a database backup.
+- Gera códigos de barras a partir de um valor introduzido manualmente ou de uma referência da base de dados.
+- Valida o dígito de controlo dos formatos GTIN compatíveis e permite ler códigos em imagens PNG ou JPEG.
+- Cria códigos QR para endereços HTTP e HTTPS. Confirma separadamente o conteúdo do QR e a disponibilidade do endereço.
+- Exporta em SVG e PNG a 600 ppi. No Illustrator, o texto do código de barras mantém-se editável.
+- Importa dados de produtos em XLSX, CSV e JSON. Inclui um modelo XLSX para preservar zeros à esquerda, pesquisa por referência ou código de barras e cópias de segurança em JSON.
 
-## Compatibility
+## Compatibilidade
 
-| Adobe app | Configured versions | Open the panel from |
+| Aplicação | Versões configuradas no manifesto CEP | Menu do painel |
 | --- | --- | --- |
-| Illustrator | 29–31 | Window → Extensions |
-| Photoshop | 26–28 | Window → Extensions (Legacy) |
-| InDesign | 20–22 | Window → Extensions |
+| Adobe Illustrator | 29.0 a 31.9 | **Window → Extensions** |
+| Adobe Photoshop | 26.0 a 28.9 | **Window → Extensions (Legacy)** |
+| Adobe InDesign | 20.0 a 22.9 | **Window → Extensions** |
 
-The panel requires a host that still loads CEP extensions. The version ranges describe the manifest configuration. [Adobe’s CEP transition guide](https://helpx.adobe.com/creative-cloud/apps/integration-with-other-apps/manage-plugins/cep-uxp-plugin-transition.html)
+A extensão requer CEP (CSXS 11.0 ou posterior) e uma aplicação que carregue extensões CEP. Os intervalos indicam a configuração do manifesto. A versão 1.6.2 inclui relatórios de teste com um ambiente CEP simulado.
 
-## Install
+## Instalação
 
-1. Extract the complete release ZIP and close Illustrator, Photoshop and InDesign.
-2. Run **Install.cmd** from the extracted folder.
-3. Reopen the Adobe app. From its **Window → Extensions** menu, select **Barvellum Suit for Adobe CC**. In Photoshop, use **Window → Extensions (Legacy)**.
+Escolhe na secção **Releases** o ZIP correspondente ao teu sistema.
 
-These local installers enable CEP’s per-user `PlayerDebugMode` for CSXS 11 and 12 to load this unsigned build. See the technical guide for restoring the previous CEP preferences. [Adobe CEP Cookbook](https://github.com/Adobe-CEP/CEP-Resources/blob/master/CEP_12.x/Documentation/CEP%2012%20HTML%20Extension%20Cookbook.md)
+| Sistema | Pacote v1.6.2 | Instalador |
+| --- | --- | --- |
+| Windows | `Barvellum_Suit_for_Windows_1.6.2.zip` | `Install.cmd` |
+| macOS | `Barvellum_Suit_for_MacOS_1.6.2.zip` | `Install.command` |
 
-## First use
+1. Extrai o ZIP completo e fecha as aplicações Adobe.
+2. Executa o instalador a partir da pasta extraída. No macOS, também podes abrir o Terminal nessa pasta e correr `/bin/bash Install.command`.
+3. Volta a abrir a aplicação Adobe e escolhe **Barvellum Suit for Adobe CC** no menu indicado na tabela de compatibilidade.
 
-1. In **Barcode**, select a format, enter a value and choose **Generate & analyze**.
-2. In **Database**, choose **Save XLSX template…**. Fill in **Reference** and **Barcode**, then import the workbook. The template uses text fields to preserve leading zeros.
-3. In **QR link**, enter a URL and choose **Analyze QR & link**.
-4. In **Analyze**, select a PNG or JPEG to read an existing code.
+O instalador activa a preferência `PlayerDebugMode` no perfil do utilizador, para que o CEP carregue esta versão sem assinatura. A actualização pelo instalador preserva a base de dados local.
 
-## Uninstall
+## Primeiros passos
 
-Close the Adobe apps. Run **Uninstall.cmd** from the extracted folder. The product database, generated assets and font stay in the user account.
+1. **Barcode** — Escolhe o formato, introduz o valor ou pesquisa uma referência e selecciona **Generate & analyze**. Revê o formato gerado antes de inserir ou exportar.
+2. **QR link** — Introduz o endereço e selecciona **Analyze QR & link**. Revê **QR reading** e **Link availability** antes de inserir ou exportar.
+3. **Analyze** — Carrega uma imagem PNG ou JPEG com um código para ler o valor e compará-lo com o valor esperado.
+4. **Database** — Usa **Save XLSX template…**, preenche as colunas **Reference** e **Barcode** e importa o ficheiro. Guardar a importação substitui a tabela actual. Usa **Export backup** para guardar uma cópia da tabela antes da importação.
 
-## Documentation
+Para EAN-13, introduz 13 dígitos, incluindo o dígito de controlo. Se este estiver incorrecto, o painel gera Code 128 com os 13 dígitos originais e identifica o formato utilizado. **Use EAN-13** aplica o dígito de controlo calculado à pré-visualização. Confirma a correspondência com o artigo antes de usar o código corrigido.
 
-- [Changelog](CHANGELOG.md)
-- [Technical guide](Resources/README.md)
-- [Supported barcode formats](Resources/FORMATS.csv)
+## Desinstalação
 
-## Credits and licensing
+Fecha as aplicações Adobe e executa `Uninstall.cmd` no Windows ou `Uninstall.command` no macOS. O guia técnico incluído em `Resources/README.md` descreve como restaurar as preferências de CEP.
 
-Developed by André Filipe. Bundled dependencies and their notices are documented in the technical guide. The supplied Amazon Ember usage guide describes Amazon’s internal use. Confirm the font redistribution terms and the project licence before publishing the source or a release archive publicly.
+## Documentação
+
+- [Histórico de versões](CHANGELOG.md)
+- [Notas da versão 1.6.2](RELEASE_NOTES.md)
+- Nos ZIP de instalação, consulta `Resources/README.md` para detalhes técnicos e `Resources/FORMATS.csv` para a lista de formatos.
+
+## Créditos e licenças
+
+Desenvolvimento por **André Filipe**. A [licença MIT](LICENSE) aplica-se ao código e à documentação originais do projecto.
+
+As bibliotecas de terceiros mantêm as respectivas licenças em `Resources/extension/vendor/`. O guia da fonte Amazon Ember encontra-se em `Resources/extension/fonts/`. A autorização para redistribuir a fonte está por confirmar.
