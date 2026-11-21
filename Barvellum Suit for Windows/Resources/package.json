@@ -1,6 +1,6 @@
 {
   "name": "barvellum-suit",
-  "version": "1.6.2",
+  "version": "1.6.3",
   "private": true,
   "description": "Barvellum Suit CEP panel for Adobe on Windows",
   "scripts": {

@@ -6,13 +6,13 @@
   },
   {
     "path": "Resources/extension/app.js",
-    "size": 36287,
-    "sha256": "d8c5a2c05c8f4a751468801f2143ae77f8993fdda946bb825e0f8875abf726fc"
+    "size": 36533,
+    "sha256": "dcf650c39fa9d09a430efbdb454d665953c6de7d50163c871a33f11872d593ce"
   },
   {
     "path": "Resources/extension/bootstrap.js",
-    "size": 1224,
-    "sha256": "fa2b6b6ca585e386b67c157989306458aebb2fd6e3767c91b8c75aa98dfa611f"
+    "size": 1228,
+    "sha256": "4ee464c776839a4b8146094cc354c92215703b997dc7ed5dc1db12809badbd7f"
   },
   {
     "path": "Resources/extension/code93.js",
@@ -21,13 +21,13 @@
   },
   {
     "path": "Resources/extension/core.js",
-    "size": 21267,
-    "sha256": "e326a0eba5552251ee872502c17b2dcd0c1268416186a90c554d0e9289cca990"
+    "size": 21796,
+    "sha256": "347ad8cdef64fab99dadef7742c12fb92ae9cd9622262677e1d7b665a0e2e96a"
   },
   {
     "path": "Resources/extension/CSXS/manifest.xml",
     "size": 1282,
-    "sha256": "df9a17fe921d2d1a4efd0113cdf692ca6c3443ce76846a3c2895fef03de318df"
+    "sha256": "3eb9afc9bded1386660827696ab2ee48ac2473e7f90d62599b2d8b908cc00bc7"
   },
   {
     "path": "Resources/extension/database.js",
@@ -57,7 +57,7 @@
   {
     "path": "Resources/extension/index.html",
     "size": 12489,
-    "sha256": "4e86b476b0ed79c43984f34c6308348e7b11433be3e4436c3bfad39d586d1549"
+    "sha256": "48f6345862ee6741d5a1d7b262e86ca81bf3dde8def276595922742889b364ce"
   },
   {
     "path": "Resources/extension/link.js",
@@ -72,7 +72,7 @@
   {
     "path": "Resources/extension/style.css",
     "size": 13514,
-    "sha256": "7ffa17daca85c4a53b6189ab35fcb318bfb75aa52de82de2a9d13acfb0cf91dd"
+    "sha256": "82171953e277f420233afe292b48fa085e42876d24fb492a01b7220598a20fb1"
   },
   {
     "path": "Resources/extension/vendor/bwip-js.js",
@@ -136,28 +136,28 @@
   },
   {
     "path": "Resources/TEST-RESULTS.json",
-    "size": 4339,
-    "sha256": "dc9aff95df0fcd47d53f428534adc4ec50c355222930066a1e179ddf7daac5f4"
+    "size": 4782,
+    "sha256": "4a8fe0655e12c7d0b51ebfe718d9ac1ed5a95524fb2ce1768d7fe92d1049f30b"
   },
   {
     "path": "Resources/CEP-TEST-RESULTS.json",
-    "size": 252,
-    "sha256": "a7b6d086329220ba81b767a85298d08e962e888447e80637da85e1ad68ae7db4"
+    "size": 461,
+    "sha256": "4934e27df7774a9064b391bf8c65ae21a75ebb5584dec252fa23b764febddfef"
   },
   {
     "path": "Resources/HOST-TEST-RESULTS.json",
     "size": 518,
-    "sha256": "2640d67ed38db3aa40e9d274e8421e544a8ee0061e12efa84bbc7c82d6296a0c"
+    "sha256": "3e266944c36f586610eb98e1d73915885dbe9a7c006b8427ee6c84e0ed39a214"
   },
   {
     "path": "Resources/LINK-TEST-RESULTS.json",
     "size": 428,
-    "sha256": "c61ccf4eda3b363c0a5d01d63284cc8c8fb60832a3aafc411c98f4ac3595bc79"
+    "sha256": "4f6091ee20fb6e807aff1b68fbc9d82c4a453ecd92f897e0c8a5215352044fad"
   },
   {
     "path": "Resources/package.json",
     "size": 368,
-    "sha256": "637eeaae3b625a72aefeca8df4e6cadebb63df2931498d2f4d1aae7fd5d13cca"
+    "sha256": "12376ede90c104eabfca8bb48cf8860cd387268ccc0b357678421822883328dd"
   },
   {
     "path": "Resources/build.cjs",
@@ -166,8 +166,8 @@
   },
   {
     "path": "Resources/tests.cjs",
-    "size": 18318,
-    "sha256": "2eae9f37693b463ff76b168094d6a8ed2dd4d5f49b0d82a9350c85a99f7c10ab"
+    "size": 19332,
+    "sha256": "1012906ef5905738fdea5a0ece11401e54158ce38a9c03c69fb0d385bb6dd0ae"
   },
   {
     "path": "Resources/cep-tests.cjs",
@@ -197,12 +197,12 @@
   {
     "path": "README.md",
     "size": 3300,
-    "sha256": "98d69a452e04755741f7c5026c93c44a0b8b80e51717fe8608058c2286b443be"
+    "sha256": "a985e35148569a126d287b741d216d5b64d6aa7e1698f92820d13d616cb8773e"
   },
   {
     "path": "CHANGELOG.md",
-    "size": 6220,
-    "sha256": "3209dec560fdae0b06744b69905e88dedd34df2c72c2411ac130eb0562614c48"
+    "size": 6536,
+    "sha256": "3485eb7b66509fece2d0880d6e91882b74fc273c0e049cdce7865fc127b6dfbf"
   },
   {
     "path": "Resources/macos.sh",

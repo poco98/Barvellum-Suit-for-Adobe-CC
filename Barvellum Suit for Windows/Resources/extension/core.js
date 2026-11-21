@@ -20,7 +20,8 @@
     if (!text || !text.trim()) throw new Error('Enter the barcode data.');
     if (text.length>12000) throw new Error('Data is too long. Panel limit: 12,000 characters.');
     var len=gtinLengths[bcid];
-    if(['itf14','ean14','sscc18'].includes(bcid))text=text.replace(/\s/g,'').replace(bcid==='ean14'?/^\(01\)/:bcid==='sscc18'?/^\(00\)/:/^$/,'');
+    if(['itf14','ean14','sscc18'].includes(bcid))text=text.replace(/\s/g,'');
+    if((bcid==='ean14'&&text.startsWith('(01)'))||(bcid==='sscc18'&&text.startsWith('(00)')))text=text.slice(4);
     if (len) {
       if (text.length!==len || /\D/.test(text)) throw new Error('This format requires exactly '+len+' digits.');
       var expected=checkDigit(text.slice(0,-1));
@@ -133,9 +134,21 @@
       return '<path fill="'+color+'" d="'+out+'" />';
     });
   }
+  function parseAdobeArtwork(svg) {
+    var doc=new DOMParser().parseFromString(svg,'image/svg+xml');
+    var root=doc.documentElement;
+    if(doc.doctype||doc.querySelector('parsererror')||root.localName!=='svg'||root.namespaceURI!=='http://www.w3.org/2000/svg'){
+      throw new Error('The encoder did not return a valid SVG.');
+    }
+    // Adobe placement uses the installed font. Keep embedded styling in the exported SVG.
+    root.querySelectorAll('style').forEach(function(style){style.remove();});
+    root.querySelectorAll('defs').forEach(function(defs){
+      if(!defs.children.length&&!defs.textContent.trim())defs.remove();
+    });
+    return root;
+  }
   function adobeSVG(svg) {
-    var artwork = svg.replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi,'').replace(/<defs>\s*<\/defs>/gi,'');
-    return '<?xml version="1.0" encoding="UTF-8"?>\n'+artwork;
+    return '<?xml version="1.0" encoding="UTF-8"?>\n'+new XMLSerializer().serializeToString(parseAdobeArtwork(svg));
   }
   function qrBackground(width,height,mmPerUnit) {
     var radius=Math.min(1.844/mmPerUnit,width/2,height/2);
@@ -153,9 +166,7 @@
     return '<path fill="#FFFFFF" d="'+path+'" />\n';
   }
   function illustratorArtwork(svg) {
-    var document = new DOMParser().parseFromString(adobeSVG(svg),'image/svg+xml');
-    var root = document.documentElement;
-    if(root.localName!=='svg')return null;
+    var root=parseAdobeArtwork(svg);
     var viewBox = root.getAttribute('viewBox').split(/\s+/).map(Number);
     if(viewBox.length!==4||viewBox[0]!==0||viewBox[1]!==0||!(viewBox[2]>0&&viewBox[3]>0))return null;
     var rows = [['BSV1',viewBox[2],viewBox[3]].join('\t')],nodes=[];

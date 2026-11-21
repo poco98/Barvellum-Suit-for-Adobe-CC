@@ -1,6 +1,12 @@
 {
-  "version": "1.6.2",
-  "distribution": "MacOS",
-  "scope": "QtWebEngine with a simulated Adobe CEP host. Live docking in Adobe applications was not exercised.",
-  "checks": "Footer geometry, long export messages, and tab and QR status isolation."
+  "version": "1.6.3",
+  "distribution": "macOS",
+  "status": "not run",
+  "reason": "Chromium could not start in the build environment. Adobe desktop tests remain pending.",
+  "previousRelease": {
+    "version": "1.6.2",
+    "distribution": "MacOS",
+    "scope": "QtWebEngine with a simulated Adobe CEP host. Live docking in Adobe applications was not exercised.",
+    "checks": "Footer geometry, long export messages, and tab and QR status isolation."
+  }
 }

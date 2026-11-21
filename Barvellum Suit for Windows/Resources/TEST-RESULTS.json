@@ -1,74 +1,82 @@
 {
-  "version": "1.6.2",
-  "date": "2026-11-21T17:06:27.879383+00:00",
-  "priorRegression": {
-    "version": "1.5.14",
-    "date": "2026-11-21T16:25:06.271047+00:00",
-    "previousEncoderChecks": {
-      "version": "1.5.10",
-      "date": "2026-11-21T15:46:41.033812+00:00",
-      "formatsGenerated": 111,
-      "ean13Cases": 60,
-      "checked": [
-        {
-          "text": "5600495642348",
-          "previousGapMm": 2.2840944444444444,
-          "editableGapMm": 0.899999999999999,
-          "outlinedGapMm": 0.9074999999999996,
-          "zbarReadback": "5600495642348"
-        }
-      ],
-      "comparison": "Only the first editable digit moved in the EAN-13 test cases. The other 110 sample formats matched the 1.5.9 SVG output.",
-      "browserSuite": "Chromium could not start in this environment.",
-      "adobeHosts": "Desktop applications were not launched."
-    },
-    "themeChecks": {
-      "sections": [
-        "Barcode",
-        "QR link",
-        "Database",
-        "Analyze",
-        "Help"
-      ],
-      "viewports": [
-        "440 × 780",
-        "350 × 500"
-      ],
-      "title": "Barvellum Suit for Adobe CC",
-      "background": "#181818",
-      "contrastRatios": {
-        "mainText": 13.71,
-        "primaryButton": 7.88,
-        "mutedText": 7.76,
-        "inputPlaceholder": 6.97
-      },
-      "runtime": "QtWebEngine with a test-only compatibility shim and a simulated Illustrator CEP bridge.",
-      "checks": "Full title fits both panel widths. Navigation, analysis labels, EAN-13, Code 128 fallback, QR reading, CSV import and image analysis passed. QR HTTP response was simulated.",
-      "adobeHosts": "Adobe desktop applications were not launched."
-    },
-    "helpAndCaptionChecks": {
-      "help": "All sections visible through the Help tab. Text fits the minimum-width 350 px panel.",
-      "illustratorCaption": "Native and SVG placement pass the full encoded value. The Illustrator DOM model uses that value as the text group name and preserves leading zeros.",
-      "environment": "QtWebEngine with simulated CEP and Illustrator DOM model. Adobe desktop applications were not launched."
-    },
-    "databaseTemplate": {
-      "workbook": "XLSX opens with Reference and Barcode headings, empty body, and text formatting for both columns.",
-      "save": "Mocked native save tested with both Node and CEP storage, a custom folder and filename containing spaces and accented characters, and cancellation. Standalone download also tested.",
-      "import": "The completed XLSX maps both headers and preserves 0123456789012 on import.",
-      "scope": "QtWebEngine with simulated Adobe CEP. Adobe desktop applications were not launched."
-    }
-  },
+  "version": "1.6.3",
+  "date": "2026-11-21T19:43:49.580Z",
   "distribution": "Windows",
-  "package": "Platform-specific installer references, resource checksums and matching extension identifiers checked.",
-  "panelDesign": {
-    "scope": "QtWebEngine with simulated Illustrator CEP filesystem and bridge. Native Adobe applications were not launched.",
-    "layout": "All five sections checked at 350 px and 440 px. Two-column editor and preview checked at 900 px.",
-    "preview": "Dark idle surface, light generated artwork, and reset after clearing the input.",
-    "workflows": "EAN-13, Code 128 fallback, QR reading, CSV import and barcode image analysis passed. The QR HTTP response was simulated."
-  },
-  "footer": {
-    "layout": "Author credit stays clear of the footer edge and status text at 275, 350, 440 and 900 px. Long export paths truncate in the status field and remain available in its tooltip.",
-    "status": "Delayed QR completion does not replace the Barcode status. The last message for each tab reappears when selected.",
-    "scope": "QtWebEngine with a simulated Adobe CEP host. Live docking in Adobe applications was not exercised."
+  "encoderExamples": 111,
+  "gtinNormalization": "passed",
+  "scope": "Encoder and GTIN checks ran in Node. The packaged v1.6.2 report is included as historical evidence.",
+  "previousRelease": {
+    "version": "1.6.2",
+    "date": "2026-11-21T17:06:27.879383+00:00",
+    "priorRegression": {
+      "version": "1.5.14",
+      "date": "2026-11-21T16:25:06.271047+00:00",
+      "previousEncoderChecks": {
+        "version": "1.5.10",
+        "date": "2026-11-21T15:46:41.033812+00:00",
+        "formatsGenerated": 111,
+        "ean13Cases": 60,
+        "checked": [
+          {
+            "text": "5600495642348",
+            "previousGapMm": 2.2840944444444444,
+            "editableGapMm": 0.899999999999999,
+            "outlinedGapMm": 0.9074999999999996,
+            "zbarReadback": "5600495642348"
+          }
+        ],
+        "comparison": "Only the first editable digit moved in the EAN-13 test cases. The other 110 sample formats matched the 1.5.9 SVG output.",
+        "browserSuite": "Chromium could not start in this environment.",
+        "adobeHosts": "Desktop applications were not launched."
+      },
+      "themeChecks": {
+        "sections": [
+          "Barcode",
+          "QR link",
+          "Database",
+          "Analyze",
+          "Help"
+        ],
+        "viewports": [
+          "440 × 780",
+          "350 × 500"
+        ],
+        "title": "Barvellum Suit for Adobe CC",
+        "background": "#181818",
+        "contrastRatios": {
+          "mainText": 13.71,
+          "primaryButton": 7.88,
+          "mutedText": 7.76,
+          "inputPlaceholder": 6.97
+        },
+        "runtime": "QtWebEngine with a test-only compatibility shim and a simulated Illustrator CEP bridge.",
+        "checks": "Full title fits both panel widths. Navigation, analysis labels, EAN-13, Code 128 fallback, QR reading, CSV import and image analysis passed. QR HTTP response was simulated.",
+        "adobeHosts": "Adobe desktop applications were not launched."
+      },
+      "helpAndCaptionChecks": {
+        "help": "All sections visible through the Help tab. Text fits the minimum-width 350 px panel.",
+        "illustratorCaption": "Native and SVG placement pass the full encoded value. The Illustrator DOM model uses that value as the text group name and preserves leading zeros.",
+        "environment": "QtWebEngine with simulated CEP and Illustrator DOM model. Adobe desktop applications were not launched."
+      },
+      "databaseTemplate": {
+        "workbook": "XLSX opens with Reference and Barcode headings, empty body, and text formatting for both columns.",
+        "save": "Mocked native save tested with both Node and CEP storage, a custom folder and filename containing spaces and accented characters, and cancellation. Standalone download also tested.",
+        "import": "The completed XLSX maps both headers and preserves 0123456789012 on import.",
+        "scope": "QtWebEngine with simulated Adobe CEP. Adobe desktop applications were not launched."
+      }
+    },
+    "distribution": "Windows",
+    "package": "Platform-specific installer references, resource checksums and matching extension identifiers checked.",
+    "panelDesign": {
+      "scope": "QtWebEngine with simulated Illustrator CEP filesystem and bridge. Native Adobe applications were not launched.",
+      "layout": "All five sections checked at 350 px and 440 px. Two-column editor and preview checked at 900 px.",
+      "preview": "Dark idle surface, light generated artwork, and reset after clearing the input.",
+      "workflows": "EAN-13, Code 128 fallback, QR reading, CSV import and barcode image analysis passed. The QR HTTP response was simulated."
+    },
+    "footer": {
+      "layout": "Author credit stays clear of the footer edge and status text at 275, 350, 440 and 900 px. Long export paths truncate in the status field and remain available in its tooltip.",
+      "status": "Delayed QR completion does not replace the Barcode status. The last message for each tab reappears when selected.",
+      "scope": "QtWebEngine with a simulated Adobe CEP host. Live docking in Adobe applications was not exercised."
+    }
   }
 }

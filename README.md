@@ -17,16 +17,16 @@ Barvellum Suit is a CEP panel for creating, reading and placing barcodes and QR 
 | Photoshop | 26.0–28.9 | **Window → Extensions (Legacy)** |
 | InDesign | 20.0–22.9 | **Window → Extensions** |
 
-The extension requires a host with CEP support and CSXS 11.0 or later. The version ranges come from the extension manifest. See the [v1.6.2 release notes](RELEASE_NOTES.md) for the test scope and pending desktop checks.
+The extension requires a host with CEP support and CSXS 11.0 or later. The version ranges come from the extension manifest. See the [v1.6.3 release notes](RELEASE_NOTES.md) for the test scope and pending desktop checks.
 
 ## Installation
 
 Download the ZIP for your operating system from **Releases**.
 
-| Operating system | v1.6.2 package | Installer |
+| Operating system | v1.6.3 package | Installer |
 | --- | --- | --- |
-| Windows | `Barvellum_Suit_for_Windows_1.6.2.zip` | `Install.cmd` |
-| macOS | `Barvellum_Suit_for_MacOS_1.6.2.zip` | `Install.command` |
+| Windows | `Barvellum_Suit_for_Windows_1.6.3.zip` | `Install.cmd` |
+| macOS | `Barvellum_Suit_for_MacOS_1.6.3.zip` | `Install.command` |
 
 1. Extract the entire ZIP and close Illustrator, Photoshop and InDesign.
 2. Run the installer from the extracted folder. On macOS, you can also open Terminal in that folder and run `/bin/bash Install.command`.
@@ -53,7 +53,7 @@ Close the Adobe applications. Run `Uninstall.cmd` on Windows or `Uninstall.comma
 ## Documentation
 
 - [Changelog](CHANGELOG.md)
-- [v1.6.2 release notes](RELEASE_NOTES.md)
+- [v1.6.3 release notes](RELEASE_NOTES.md)
 - Each installer ZIP contains a technical guide at `Resources/README.md` and a format list at `Resources/FORMATS.csv`.
 
 ## Credits and licensing

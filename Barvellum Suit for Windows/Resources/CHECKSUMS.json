@@ -16,13 +16,13 @@
   },
   {
     "path": "Resources/extension/app.js",
-    "size": 36287,
-    "sha256": "d8c5a2c05c8f4a751468801f2143ae77f8993fdda946bb825e0f8875abf726fc"
+    "size": 36533,
+    "sha256": "dcf650c39fa9d09a430efbdb454d665953c6de7d50163c871a33f11872d593ce"
   },
   {
     "path": "Resources/extension/bootstrap.js",
     "size": 1224,
-    "sha256": "fa2b6b6ca585e386b67c157989306458aebb2fd6e3767c91b8c75aa98dfa611f"
+    "sha256": "e630bbb961db1d9f6003a6f3b604bed695556d9f04148789bd3887a6e2494e3c"
   },
   {
     "path": "Resources/extension/code93.js",
@@ -31,13 +31,13 @@
   },
   {
     "path": "Resources/extension/core.js",
-    "size": 21267,
-    "sha256": "e326a0eba5552251ee872502c17b2dcd0c1268416186a90c554d0e9289cca990"
+    "size": 21796,
+    "sha256": "347ad8cdef64fab99dadef7742c12fb92ae9cd9622262677e1d7b665a0e2e96a"
   },
   {
     "path": "Resources/extension/CSXS/manifest.xml",
     "size": 1282,
-    "sha256": "df9a17fe921d2d1a4efd0113cdf692ca6c3443ce76846a3c2895fef03de318df"
+    "sha256": "3eb9afc9bded1386660827696ab2ee48ac2473e7f90d62599b2d8b908cc00bc7"
   },
   {
     "path": "Resources/extension/database.js",
@@ -67,7 +67,7 @@
   {
     "path": "Resources/extension/index.html",
     "size": 12440,
-    "sha256": "3c46d45896a09fc15da5af7f297f778abec42bbcf9b2fb46fedc272fba4ee78c"
+    "sha256": "10b2e0e91c1138dbe2b45c2382c99d873efe4066cd29c73e15d4a11dd2f3bd64"
   },
   {
     "path": "Resources/extension/link.js",
@@ -82,7 +82,7 @@
   {
     "path": "Resources/extension/style.css",
     "size": 13514,
-    "sha256": "7ffa17daca85c4a53b6189ab35fcb318bfb75aa52de82de2a9d13acfb0cf91dd"
+    "sha256": "82171953e277f420233afe292b48fa085e42876d24fb492a01b7220598a20fb1"
   },
   {
     "path": "Resources/extension/vendor/bwip-js.js",
@@ -156,28 +156,28 @@
   },
   {
     "path": "Resources/TEST-RESULTS.json",
-    "size": 3800,
-    "sha256": "68b61396f7cdfc611d1ca866f185e43a27c06662ef8e59d35e11f03e5715fe5c"
+    "size": 4233,
+    "sha256": "debd57c87fc42c4f07ae80b877aededcd657bc4b8749d2c309f180e854c283e1"
   },
   {
     "path": "Resources/CEP-TEST-RESULTS.json",
-    "size": 254,
-    "sha256": "6444b0a615993d03c842d12492a92dd49507dc18bb2371451ceea48e902abadb"
+    "size": 465,
+    "sha256": "28c14d7694efb6dbdb24377d3b961ac1a70f5d3ea1f6f24fa86e72d3df8f1cc2"
   },
   {
     "path": "Resources/HOST-TEST-RESULTS.json",
     "size": 518,
-    "sha256": "a6eb7bbeef56c51f1a871b43985f6ac6e2db8beb13421ccdf05893fbcb636de1"
+    "sha256": "f521fdd09e41f42b232de5898fcbaf5aa19a85900b124f1933cb406aa4ed28ec"
   },
   {
     "path": "Resources/LINK-TEST-RESULTS.json",
     "size": 428,
-    "sha256": "01f4de3cadf2cf8b0e5bcb65083ef00d2ab93b184e4bfd0d44ce484798fcca65"
+    "sha256": "8ed0efa0bf3fa251129abdc55bf54f6a9c0877b51e4535d81f40bb0b626b15d8"
   },
   {
     "path": "Resources/package.json",
     "size": 370,
-    "sha256": "5e3f4e6b2415355fc5de277e69158aced76ef238ccfd06d990eb2efee2485eaa"
+    "sha256": "0a08227d9771bc84a599dbf8961af2b73d5a239c583d8e61d48a299a6d74b17a"
   },
   {
     "path": "Resources/build.cjs",
@@ -186,8 +186,8 @@
   },
   {
     "path": "Resources/tests.cjs",
-    "size": 18318,
-    "sha256": "2eae9f37693b463ff76b168094d6a8ed2dd4d5f49b0d82a9350c85a99f7c10ab"
+    "size": 19332,
+    "sha256": "1012906ef5905738fdea5a0ece11401e54158ce38a9c03c69fb0d385bb6dd0ae"
   },
   {
     "path": "Resources/cep-tests.cjs",
@@ -207,11 +207,11 @@
   {
     "path": "README.md",
     "size": 2809,
-    "sha256": "1e2b37c8ec3af68275d6c0ee893c2be157440163b53ee2a37f6876aa65959758"
+    "sha256": "ae93ebb5720a05e8cefa0f4fc85e05eed894b011fac0c7df5032f05dd554d52c"
   },
   {
     "path": "CHANGELOG.md",
-    "size": 6065,
-    "sha256": "4763ba1ae343008516f8c93fcb743ccd6d8dfca34b93b3bed7deaec6d73f4f3b"
+    "size": 6381,
+    "sha256": "fe1ac74801aed3bc1eb28abbbd018852e6a99141fefb5e6e43c4fbf4f44cb3d5"
   }
 ]

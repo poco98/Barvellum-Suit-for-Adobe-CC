@@ -67,8 +67,15 @@
   function renderPreview(id,value,isArtwork){
     var preview=$(id);
     preview.classList.toggle('has-artwork',!!isArtwork);
-    if(isArtwork)preview.innerHTML=value.replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi,'');
-    else preview.textContent=value;
+    if(!isArtwork){
+      preview.textContent=value;
+      return;
+    }
+    // Keep SVG markup outside the panel document by loading it as an image.
+    var image=document.createElement('img');
+    image.alt=id==='qr-preview'?'QR preview':'Barcode preview';
+    image.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(value);
+    preview.replaceChildren(image);
   }
   function invalidate(){revision++;current=null;setButtons();$('dimensions').textContent='';$('preview-state').textContent='Changed';renderPreview('preview','Update the preview to see your changes.');notice('validation','Data changed. Generate and analyze again.');}
   function schedulePreview(){clearTimeout(liveTimer);if($('live').checked&&$('value').value.trim())liveTimer=setTimeout(function(){generate(false);},400);}

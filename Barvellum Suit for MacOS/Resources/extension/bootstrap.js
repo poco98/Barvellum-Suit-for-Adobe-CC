@@ -1,12 +1,12 @@
 (function(){
   'use strict';
-  var state={ready:false,errors:[],version:'1.6.2'};
+  var state={ready:false,errors:[],version:'1.6.3'};
   function report(message){
     state.errors.push(String(message));
     var text='Barvellum Suit could not start: '+message;
     var footer=document.getElementById('status'),box=document.getElementById('boot-status');
     if(footer)footer.textContent=text;
-    if(box){box.hidden=false;box.textContent=text+' Close the Adobe app and run Install.cmd from the complete extracted package.';box.className='notice error';}
+    if(box){box.hidden=false;box.textContent=text+' Close the Adobe app and run Install.command from the complete extracted package.';box.className='notice error';}
   }
   window.CodeStudioBoot=state;
   state.fail=report;

@@ -2,6 +2,14 @@
 
 Release notes for Barvellum Suit for Adobe CC. Each entry describes that version’s behaviour. Later releases supersede earlier defaults where noted.
 
+## 1.6.3
+
+### Fixed
+
+- Render barcode and QR previews as SVG images to keep markup out of the panel document.
+- Remove embedded styling through XML parsing before preparing SVG artwork for Adobe placement.
+- Keep ITF-14 whitespace handling and strip only the matching application identifier for EAN-14 and SSCC-18.
+
 ## 1.6.2
 
 - Add clearance around the footer so the author credit remains visible next to Adobe's docking controls.

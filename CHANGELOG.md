@@ -2,7 +2,15 @@
 
 Version history for Barvellum Suit for Adobe CC, most recent first. Defaults in each entry apply to that version.
 
-## [1.6.2](RELEASE_NOTES.md)
+## [1.6.3](RELEASE_NOTES.md)
+
+### Fixed
+
+- Render SVG previews as images.
+- Use an XML parser to remove embedded styles from artwork prepared for Adobe placement.
+- Remove the redundant replacement in ITF-14 validation and strip the matching application identifier for EAN-14 and SSCC-18.
+
+## 1.6.2
 
 ### Fixed
 

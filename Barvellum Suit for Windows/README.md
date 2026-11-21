@@ -1,6 +1,6 @@
 # Barvellum Suit for Windows
 
-Version **1.6.2**. A CEP panel for generating, reading and placing barcodes and QR codes in Adobe Illustrator, Photoshop and InDesign. Built by André Filipe.
+Version **1.6.3**. A CEP panel for generating, reading and placing barcodes and QR codes in Adobe Illustrator, Photoshop and InDesign. Built by André Filipe.
 
 ## What you can do
 

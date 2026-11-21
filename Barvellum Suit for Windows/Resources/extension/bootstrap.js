@@ -1,6 +1,6 @@
 (function(){
   'use strict';
-  var state={ready:false,errors:[],version:'1.6.2'};
+  var state={ready:false,errors:[],version:'1.6.3'};
   function report(message){
     state.errors.push(String(message));
     var text='Barvellum Suit could not start: '+message;

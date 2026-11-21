@@ -513,7 +513,7 @@ summary::marker { color: var(--accent); }
   color: #4e4e4e;
 }
 
-.preview svg { width: auto; max-width: 100%; height: auto; max-height: 248px; }
+.preview img { width: auto; max-width: 100%; height: auto; max-height: 248px; }
 .qr-preview { min-height: 154px; }
 .dimensions { margin-top: 5px; color: var(--muted); font-size: 11px; }
 .dimensions:empty { display: none; }

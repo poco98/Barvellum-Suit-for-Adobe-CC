@@ -5,6 +5,11 @@ const core=require('./extension/core.js');
 assert.equal(core.checkDigit('560049566733'),'4');assert.equal(core.complete('ean13','560049566733'),'5600495667334');
 assert.throws(()=>core.validate('ean13','5600495667335'));assert.throws(()=>core.validate('ean13','560049566733'));
 assert.equal(core.checkDigit('1234567'),'0');assert.throws(()=>core.complete('qrcode','123'));
+const ean14=core.complete('ean14','1001234500001'),sscc18=core.complete('sscc18','00000000000000001');
+assert.equal(core.validate('ean14','(01) '+ean14).text,ean14);
+assert.equal(core.validate('sscc18','(00) '+sscc18).text,sscc18);
+assert.equal(core.validate('itf14',ean14.slice(0,6)+' '+ean14.slice(6)).text,ean14);
+assert.throws(()=>core.validate('itf14','(01)'+ean14));
 assert.deepEqual(core.parseCSV('\uFEFFRef;Descrição;EAN\r\nA;"A; B";0123456789012\r\nB;"Linha 1\nLinha 2";123\r\n'),[['Ref','Descrição','EAN'],['A','A; B','0123456789012'],['B','Linha 1\nLinha 2','123']]);
 assert.throws(()=>core.parseCSV('a;b\n"missing'));assert.deepEqual(core.parseCSV('a,b\n"a""b",c'),[['a','b'],['a"b','c']]);
 assert.throws(()=>core.options('{"scale":1}'));assert.throws(()=>core.records([['EAN'],['5.6004E+12']],{code:0,qr:-1,ref:-1,desc:-1,format:-1}));
@@ -28,6 +33,10 @@ try{
  const hostArtwork=await page.evaluate(async()=>{
   const cfg={bcid:'ean13',text:'5600495667334',moduleMm:0.4,heightMm:12,showText:true,extra:'',fontBase64:CodeFontBase64};
   const original=CodeCore.build(bwipjs,cfg);
+  const placement=CodeCore.adobeSVG(original.svg);
+  if(!original.svg.includes('<style>')||placement.includes('<style')||placement.includes('<defs')||!placement.includes('<text ')){
+   throw Error('Embedded font styling must stay in export and editable captions must stay in Adobe artwork.');
+  }
   const outlined=CodeCore.build(bwipjs,{...cfg,outlineText:true,fontBase64:null});
   const svg=CodeCore.adobeSVG(outlined.svg);
   const raster=await CodeScanner.raster(svg,outlined.widthMm,outlined.heightMm,450);
@@ -118,7 +127,14 @@ try{
   return {xlsx:'passed',leadingZero:sheet.rows[1][1],pngDpi:dpi,unsupportedDecoder:'explicit'};
  });console.log('File checks:',JSON.stringify(fileChecks));
  await page.locator('#value').fill('5600495667334');await page.locator('#generate').click();await page.waitForFunction(()=>document.getElementById('validation').textContent.includes('Independent reading confirmed'),{timeout:10000});
- const text=await page.locator('#preview text').first().evaluate(e=>({font:e.getAttribute('font-family'),weight:e.getAttribute('font-weight'),points:Number(e.getAttribute('font-size'))*Number(document.getElementById('module').value)/3*72/25.4}));assert.equal(text.font,'Amazon Ember');assert.equal(text.weight,'400');assert(Math.abs(text.points-14)<1e-8);
+ await page.waitForFunction(()=>document.querySelector('#preview img').naturalWidth>0);
+ assert.equal(await page.locator('#preview svg').count(),0);
+ const text=await page.locator('#preview img').evaluate(image=>{
+  const svg=decodeURIComponent(image.src.slice(image.src.indexOf(',')+1));
+  const caption=new DOMParser().parseFromString(svg,'image/svg+xml').querySelector('text');
+  return {font:caption.getAttribute('font-family'),weight:caption.getAttribute('font-weight'),points:Number(caption.getAttribute('font-size'))*Number(document.getElementById('module').value)/3*72/25.4};
+ });
+ assert.equal(text.font,'Amazon Ember');assert.equal(text.weight,'400');assert(Math.abs(text.points-14)<1e-8);
  const endings=await page.evaluate(async()=>{
   const results=[];
   for(let digit=0;digit<=9;digit++){
