@@ -1,0 +1,212 @@
+[
+  {
+    "path": "readme.txt",
+    "size": 2656,
+    "sha256": "c1053ab92d3ba36073ca0ebe6cf56799e04f6ad605fe2cb7a082a0712b6b7f54"
+  },
+  {
+    "path": "Resources/extension/app.js",
+    "size": 36287,
+    "sha256": "d8c5a2c05c8f4a751468801f2143ae77f8993fdda946bb825e0f8875abf726fc"
+  },
+  {
+    "path": "Resources/extension/bootstrap.js",
+    "size": 1224,
+    "sha256": "fa2b6b6ca585e386b67c157989306458aebb2fd6e3767c91b8c75aa98dfa611f"
+  },
+  {
+    "path": "Resources/extension/code93.js",
+    "size": 2512,
+    "sha256": "70aa263866daf4c3fb3ba31f1979ce68f381d6f789d331b8f1f2f0a733c69e3f"
+  },
+  {
+    "path": "Resources/extension/core.js",
+    "size": 21267,
+    "sha256": "e326a0eba5552251ee872502c17b2dcd0c1268416186a90c554d0e9289cca990"
+  },
+  {
+    "path": "Resources/extension/CSXS/manifest.xml",
+    "size": 1282,
+    "sha256": "df9a17fe921d2d1a4efd0113cdf692ca6c3443ce76846a3c2895fef03de318df"
+  },
+  {
+    "path": "Resources/extension/database.js",
+    "size": 7921,
+    "sha256": "a46d5345b988d496c721b343a003b041bd2a5ea97cee99f3dadceb4da03eaf85"
+  },
+  {
+    "path": "Resources/extension/font-data.js",
+    "size": 141461,
+    "sha256": "416960962b7ba52b48f888703ebf419a4b5cd3c822bf94739a2d8b3216af2a5b"
+  },
+  {
+    "path": "Resources/extension/fonts/AmazonEmber_Rg.ttf",
+    "size": 106076,
+    "sha256": "8d001762907d743767f1af5c3398fd97d1be7aed3cb7c819a500156c49524484"
+  },
+  {
+    "path": "Resources/extension/fonts/Amazon_Ember_Usage_Guidelines.pdf",
+    "size": 40049,
+    "sha256": "a4ce4137e9a654fd0143689b17538186676645eb6d04483d2e6ced9acf5903dd"
+  },
+  {
+    "path": "Resources/extension/host/bridge.jsx",
+    "size": 17727,
+    "sha256": "5f0f8e51c73c766428282628a61235c3711a0aa5ea71d4aadab9f2e9f006920f"
+  },
+  {
+    "path": "Resources/extension/index.html",
+    "size": 12489,
+    "sha256": "4e86b476b0ed79c43984f34c6308348e7b11433be3e4436c3bfad39d586d1549"
+  },
+  {
+    "path": "Resources/extension/link.js",
+    "size": 4213,
+    "sha256": "41c90e8a4fb9b9a8a673ef1a7df041358f0dc3db59ce0154dfd2c9c27bbd7494"
+  },
+  {
+    "path": "Resources/extension/scanner.js",
+    "size": 5657,
+    "sha256": "08294c7e7b75f5ef8ce6d1a5d947d933a43f26effcba7ee44668d48ed3924ae9"
+  },
+  {
+    "path": "Resources/extension/style.css",
+    "size": 13514,
+    "sha256": "7ffa17daca85c4a53b6189ab35fcb318bfb75aa52de82de2a9d13acfb0cf91dd"
+  },
+  {
+    "path": "Resources/extension/vendor/bwip-js.js",
+    "size": 1112558,
+    "sha256": "e2998077c313a58573bdc5d4df150610da99f0c8a8bbe625ef98ed1a446a6da3"
+  },
+  {
+    "path": "Resources/extension/vendor/BWIP-LICENSE.txt",
+    "size": 1123,
+    "sha256": "9af071a4fdde3c7505646fbb1684a21245eb7ac68644ec1029bd351d14c264e8"
+  },
+  {
+    "path": "Resources/extension/vendor/JSQR-LICENSE.txt",
+    "size": 11359,
+    "sha256": "28a773bfffa828ec38c030fc8ace5f3aeb90926ec1309bbd135441c4387ce3cd"
+  },
+  {
+    "path": "Resources/extension/vendor/jsQR.js",
+    "size": 256823,
+    "sha256": "0b606709b3fd291150741115586e960952334a19be0ad24f7b4812d88e286ffa"
+  },
+  {
+    "path": "Resources/extension/vendor/JSZIP-LICENSE.md",
+    "size": 33753,
+    "sha256": "566c953c6090b1218ca6217dd7359d45dde46581968586dc607d59a78af6a9c4"
+  },
+  {
+    "path": "Resources/extension/vendor/jszip.js",
+    "size": 97729,
+    "sha256": "d999fe00d578aa3a955fc94c689f1277bb20e0da9b733904f020f0b779d598c1"
+  },
+  {
+    "path": "Resources/extension/vendor/QUAGGA-LICENSE.txt",
+    "size": 1087,
+    "sha256": "7d6a49f808153ab8b1bc4734ee6950394fc14260139d5b59a9d8227bb5632a19"
+  },
+  {
+    "path": "Resources/extension/vendor/quagga.js",
+    "size": 93404,
+    "sha256": "270e71dd03ba326e4f0f6f0ed89d8c4aeeec5418429d984062693caad149f359"
+  },
+  {
+    "path": "Resources/extension/vendor/ZXING-LICENSE.txt",
+    "size": 13321,
+    "sha256": "849b3ff4527ff587eecc78736b5685bbba7a44b071f3b944da914e832292f6c0"
+  },
+  {
+    "path": "Resources/README.md",
+    "size": 7477,
+    "sha256": "62b55b84b2322ea952cf184fd4b4ef50a2dd17db1ef79ce3bfc95418f4773e47"
+  },
+  {
+    "path": "Resources/FORMATS.csv",
+    "size": 3389,
+    "sha256": "ac89042d3ddd9c1632d42c454614e162015c71444adc313a1838bf3799d0cd20"
+  },
+  {
+    "path": "Resources/example_products.csv",
+    "size": 68,
+    "sha256": "0e7cedcd2be1e6c54dedadcb6e988245b95413f426e2f3952332fd2a66f0088e"
+  },
+  {
+    "path": "Resources/TEST-RESULTS.json",
+    "size": 4339,
+    "sha256": "dc9aff95df0fcd47d53f428534adc4ec50c355222930066a1e179ddf7daac5f4"
+  },
+  {
+    "path": "Resources/CEP-TEST-RESULTS.json",
+    "size": 252,
+    "sha256": "a7b6d086329220ba81b767a85298d08e962e888447e80637da85e1ad68ae7db4"
+  },
+  {
+    "path": "Resources/HOST-TEST-RESULTS.json",
+    "size": 518,
+    "sha256": "2640d67ed38db3aa40e9d274e8421e544a8ee0061e12efa84bbc7c82d6296a0c"
+  },
+  {
+    "path": "Resources/LINK-TEST-RESULTS.json",
+    "size": 428,
+    "sha256": "c61ccf4eda3b363c0a5d01d63284cc8c8fb60832a3aafc411c98f4ac3595bc79"
+  },
+  {
+    "path": "Resources/package.json",
+    "size": 368,
+    "sha256": "637eeaae3b625a72aefeca8df4e6cadebb63df2931498d2f4d1aae7fd5d13cca"
+  },
+  {
+    "path": "Resources/build.cjs",
+    "size": 783,
+    "sha256": "63a4d5759374170a4b551abe95be67afe49568ad62a853f316702fd462aa245a"
+  },
+  {
+    "path": "Resources/tests.cjs",
+    "size": 18318,
+    "sha256": "2eae9f37693b463ff76b168094d6a8ed2dd4d5f49b0d82a9350c85a99f7c10ab"
+  },
+  {
+    "path": "Resources/cep-tests.cjs",
+    "size": 16102,
+    "sha256": "39144a0d5b538b8a2995f36e47490ca3db9aed3e92087e795748e0e919dd1914"
+  },
+  {
+    "path": "Resources/host-tests.cjs",
+    "size": 10942,
+    "sha256": "9fdfb1e9f2832ef8d8f3b68214c8a7755b121617f7a5753183cd936245f75522"
+  },
+  {
+    "path": "Resources/link-tests.cjs",
+    "size": 2634,
+    "sha256": "376abed47179d6043ae85272591bb8598bbf97fb5418df724e58445e0c694cfe"
+  },
+  {
+    "path": "Install.command",
+    "size": 116,
+    "sha256": "000020554dfd007d1c1a4bd7b5a1726c38b38323a417ec341803833c5dece22a"
+  },
+  {
+    "path": "Uninstall.command",
+    "size": 118,
+    "sha256": "96d2a86be4860735c07686d8bf62301c505a199b80b7b863c3c97a3bcceb35f9"
+  },
+  {
+    "path": "README.md",
+    "size": 3300,
+    "sha256": "98d69a452e04755741f7c5026c93c44a0b8b80e51717fe8608058c2286b443be"
+  },
+  {
+    "path": "CHANGELOG.md",
+    "size": 6220,
+    "sha256": "3209dec560fdae0b06744b69905e88dedd34df2c72c2411ac130eb0562614c48"
+  },
+  {
+    "path": "Resources/macos.sh",
+    "size": 5666,
+    "sha256": "10e8ebf14cd389c89e1d0001d4f547383ee1e6eda4429638e1f3732e2723a805"
+  }
+]
