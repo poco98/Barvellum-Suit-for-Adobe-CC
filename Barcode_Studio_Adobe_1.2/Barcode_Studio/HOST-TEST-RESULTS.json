@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-20T13:54:50.328Z",
+  "illustratorImport": "open SVG as document, duplicate native artwork, close donor",
+  "svgPlacedItemsCalls": 0,
+  "nestedTextFont": "AmazonEmber-Regular",
+  "textSizePt": 10.5,
+  "uniformScale": "passed",
+  "temporaryDocumentCleanup": "passed",
+  "rollbackOnImportFailure": "passed",
+  "lockedLayerGuard": "passed",
+  "missingFileGuard": "passed",
+  "qrWithoutHumanReadableText": "passed",
+  "scope": "The real bridge function is executed against a model of the Illustrator DOM. This is not a native Adobe desktop run."
+}

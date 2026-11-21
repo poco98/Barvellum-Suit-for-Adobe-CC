@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' file:; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self' file: data:; img-src 'self' data: blob:; connect-src http: https:; object-src 'none'; base-uri 'none'">
+<title>Barcode Studio</title><link rel="stylesheet" href="style.css"><script src="bootstrap.js"></script></head>
+<body>
+<header><span class="brand-mark" aria-hidden="true"></span><div><h1>Barcode Studio</h1><p>Barcodes &amp; QR links</p></div><span class="version">1.5.6</span></header>
+<div id="host" class="host">Starting panel…</div>
+<nav aria-label="Sections"><button data-tab="create" class="active">Barcode</button><button data-tab="qr">QR link</button><button data-tab="database">Database <span id="count">0</span></button><button data-tab="verify">Verify</button><button data-tab="help">Help</button></nav>
+<main><div id="boot-status" class="notice" role="alert">Loading barcode engine…</div>
+<section id="create" class="tab active">
+<div class="card product-card"><div class="sectionhead"><h2>Choose a product</h2><span class="tag">From database</span></div>
+<label for="product-search">Find product reference</label><input id="product-search" type="search" autocomplete="off" placeholder="Type a reference or barcode…" aria-controls="product-matches" aria-expanded="false"><div id="product-matches" class="product-matches" hidden></div><p id="product-search-note" class="muted">Import Reference and Barcode columns in Database.</p></div>
+<div class="sectionhead settings-title"><h2>Barcode settings</h2><span class="tag" id="format-count">Loading…</span></div>
+<label for="format">Barcode format</label><select id="format" aria-describedby="format-hint"></select><p id="format-hint" class="muted"></p>
+<label for="value">Data / text <span id="selected-ref" class="selected-reference"></span></label><textarea id="value" rows="2" spellcheck="false" placeholder="Choose a product above, or type data manually"></textarea>
+<div class="row compact"><button id="sample" class="secondary small">Load sample</button><button id="complete" class="secondary small">Check / calculate digit</button><label class="check live"><input id="live" type="checkbox" checked> Live</label></div>
+<div class="grid"><div><label for="module">X dimension (mm)</label><input id="module" type="number" min="0.15" max="2" step="0.01" value="0.45"></div><div><label for="height">Bar height (mm)</label><input id="height" type="number" min="5" max="150" step="0.1" value="13"></div></div>
+<label class="check"><input id="show-text" type="checkbox" checked> Show human-readable text</label>
+<div class="spec-line">Amazon Ember Regular <span>14 pt</span><span>Expanded bars</span></div>
+<div id="qr-settings" hidden><label for="qr-level">QR error correction</label><select id="qr-level"><option value="L">L — low</option><option value="M" selected>M — medium</option><option value="Q">Q — high</option><option value="H">H — highest</option></select></div>
+<details><summary>Advanced format options</summary><p>BWIPP options as JSON. For a link QR, use the dedicated QR link tab.</p><textarea id="extra" rows="2" spellcheck="false" placeholder='{"parsefnc":true}'></textarea></details>
+<button id="generate" class="primary wide">Generate &amp; verify</button>
+<div class="preview-head"><span>Barcode preview</span><span id="preview-state">No data</span></div><div id="preview" class="preview"><span>Your barcode will appear here</span></div><div id="dimensions" class="muted"></div>
+<div id="validation" class="notice" role="status" aria-live="polite">Choose a product or enter barcode data.</div>
+<button id="use-ean13" class="secondary wide" hidden>Use EAN-13</button>
+<button id="place" class="primary wide" disabled>Insert barcode</button><div id="insert-status" class="notice" role="status" hidden></div><div class="grid export-row"><button id="svg" disabled>Export SVG</button><button id="png" disabled>PNG · 600 ppi</button></div>
+</section>
+<section id="qr" class="tab">
+<div class="sectionhead"><h2>A link, ready to scan</h2><span class="tag">QR Code</span></div><p>Create a QR for a manual, product page or website.</p>
+<label for="qr-url">Website / document link</label><textarea id="qr-url" rows="3" spellcheck="false" placeholder="https://example.com/manual.pdf"></textarea>
+<div class="grid"><div><label for="qr-size">QR size (mm)</label><input id="qr-size" type="number" min="10" max="200" step="1" value="30"></div><div><label for="qr-correction">Error correction</label><select id="qr-correction"><option value="L">L — low</option><option value="M" selected>M — medium</option><option value="Q">Q — high</option><option value="H">H — highest</option></select></div></div>
+<button id="qr-generate" class="primary wide">Verify QR &amp; link</button><button id="qr-open" class="secondary wide" disabled>Open link in browser</button>
+<div class="preview-head"><span>QR preview</span><span id="qr-preview-state">No link</span></div><div id="qr-preview" class="preview qr-preview"><span>Your QR will appear here</span></div><div id="qr-dimensions" class="muted"></div>
+<div class="card check-card"><div class="check-line"><span>QR reading</span><span id="qr-read-badge" class="pill">Not checked</span></div><p id="qr-read-status">The generated QR is read back and compared with your link.</p><div class="check-line"><span>Link availability</span><span id="qr-link-badge" class="pill">Not checked</span></div><p id="qr-link-status">Verify QR &amp; link sends a connection check to the address. Some servers block automated checks.</p></div>
+<button id="qr-place" class="primary wide" disabled>Insert QR</button><div id="qr-insert-status" class="notice" role="status" hidden></div><div class="grid export-row"><button id="qr-svg" disabled>Export SVG</button><button id="qr-png" disabled>PNG · 600 ppi</button></div>
+<p class="footnote">A readable QR and an accessible link are separate checks. Availability can change after generation.</p>
+</section>
+<section id="database" class="tab">
+<div class="sectionhead"><h2>Product database</h2><span class="tag">2 columns</span></div><p>Import a table with your product references and barcode values.</p><button id="choose-db" class="primary wide">Import XLSX / CSV / JSON…</button><input id="db-file" type="file" hidden accept=".csv,.tsv,.txt,.xlsx,.json">
+<div id="mapping" hidden class="card"><label for="sheet">Worksheet</label><select id="sheet"></select><div id="columns"></div><button id="import" class="primary wide">Save database</button><p>Only Reference and Barcode are imported. Saving replaces the current database.</p></div>
+<div id="db-status" class="notice" role="status" aria-live="polite">No database loaded.</div><input id="search" type="search" aria-label="Search database" placeholder="Reference or barcode…">
+<div class="row compact"><button id="backup" class="small secondary">Export backup</button><button id="audit" class="small secondary">Audit codes</button><button id="refresh" class="small secondary">Reload</button></div>
+<details id="product-list" class="database-list"><summary>Browse products</summary><div id="results" class="results" role="region" aria-label="Product results" tabindex="0"></div><p class="muted" id="results-count" role="status"></p><button id="more" class="wide" hidden>Show 25 more</button></details><pre id="audit-result" hidden></pre>
+</section>
+<section id="verify" class="tab">
+<div class="sectionhead"><h2>Read an existing code</h2><span class="tag">Image check</span></div><p>Choose a sharp, upright PNG or JPEG cropped around one barcode or QR.</p><button id="choose-scan" class="primary wide">Choose image…</button><input id="scan-file" type="file" hidden accept="image/png,image/jpeg">
+<label for="expected">Expected data (optional)</label><textarea id="expected" rows="2" spellcheck="false" placeholder="Compare the decoded result with this value"></textarea><div id="scan-preview" class="scan-preview"></div><div id="scan-status" class="notice" role="status" aria-live="polite">Waiting for an image.</div><p class="footnote">Readers: standard QR, EAN-8/13, UPC-A/E, Code 128/39/93, ITF and Codabar. Other formats have encoder validation only.</p>
+</section>
+<section id="help" class="tab">
+<h2>Built for your labels</h2><div class="card about-card"><span class="brand-mark" aria-hidden="true"></span><div>Barcode Studio 1.5.6<p>by André Filipe</p></div></div>
+<h3>Barcode workflow</h3><ol><li>Type a code or find a product reference in Barcode.</li><li>Generate, verify and insert into your document.</li></ol><p>The EAN-13 selection requires exactly 13 digits. If the check digit differs, the panel uses Code 128 and preserves the original number. The QR link tab is independent of the product table.</p>
+<h3>Your base measurements</h3><p>X dimension: 0.45 mm. Bar height: 13 mm. Caption gap: 0.80 mm from regular bars. Text: Amazon Ember Regular, 14 pt. Dimensions remain in place when changing products. Local settings are remembered.</p>
+<h3>Illustrator insertion</h3><p>The SVG is opened as a temporary document. Its native vectors are duplicated into your active document, grouped and centred on the active artboard. The temporary document is then closed. No raster conversion or clipboard copy is used. Select an unlocked, visible layer.</p>
+<h3>Print checks</h3><p>All bars are expanded filled paths. Text remains editable in Illustrator. RGB black is used; check 100% K conversion for CMYK work. Verify the final print dimensions separately.</p>
+<h3>QR and link checks</h3><p>QR reading confirms that the image decodes to your link. Link availability checks the server response where possible. A login page, blocked request, timeout or CORS restriction is reported separately. A successful response does not certify the page content or future availability.</p>
+<h3>Data and compatibility</h3><p>UTF-8 CSV/TSV, XLSX and JSON are supported. Store codes as text to retain zeros. Existing local product data is retained on update. The panel is configured for Windows Illustrator 29–31, Photoshop 26–28 and InDesign 20–22. Run Install.cmd with all three apps closed.</p>
+<h3>Diagnostics</h3><button id="diagnostics" class="secondary">Show diagnostics</button><pre id="diagnostic-output" hidden></pre>
+<h3>Credits</h3><p>bwip-js/BWIPP, jsQR, QuaggaJS, the ZXing-derived Code 93 reader and JSZip. Licences and source code are included.</p>
+</section></main>
+<footer><span id="status" role="status" aria-live="polite">Starting…</span><span class="byline">by André Filipe</span></footer>
+<script src="vendor/bwip-js.js"></script><script src="vendor/jsQR.js"></script><script src="vendor/quagga.js"></script><script src="vendor/jszip.js"></script><script src="font-data.js"></script><script src="core.js"></script><script src="database.js"></script><script src="code93.js"></script><script src="scanner.js"></script><script src="link.js"></script><script src="app.js"></script>
+</body></html>

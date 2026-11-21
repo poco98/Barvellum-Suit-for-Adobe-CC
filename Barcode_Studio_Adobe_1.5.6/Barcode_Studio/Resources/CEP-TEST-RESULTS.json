@@ -1,0 +1,62 @@
+{
+  "date": "2026-11-20T16:28:15.448Z",
+  "regression": "Original mixed-context failure reproduced: CodeCore is not defined, zero formats. Fixed browser-first export and optional-storage initialisation.",
+  "results": [
+    {
+      "host": "Adobe Illustrator 31.0",
+      "mode": "Node filesystem",
+      "formats": 111,
+      "manualText": "passed",
+      "nativeCsvImport": "passed",
+      "twoColumnMapping": "passed",
+      "collapsibleDatabase": "passed",
+      "referenceSearch": "passed",
+      "sourceIndependentEAN13": "passed",
+      "measurementPersistence": "passed",
+      "dedicatedQR": "passed",
+      "hostInsertCall": "passed",
+      "svgExport": "passed",
+      "livePreview": "passed",
+      "authorCredit": "passed",
+      "errors": []
+    },
+    {
+      "host": "Adobe Photoshop 28.0",
+      "mode": "CEP filesystem",
+      "formats": 111,
+      "manualText": "passed",
+      "nativeCsvImport": "passed",
+      "twoColumnMapping": "passed",
+      "collapsibleDatabase": "passed",
+      "referenceSearch": "passed",
+      "sourceIndependentEAN13": "passed",
+      "measurementPersistence": "passed",
+      "dedicatedQR": "passed",
+      "hostInsertCall": "passed",
+      "svgExport": "passed",
+      "livePreview": "passed",
+      "authorCredit": "passed",
+      "errors": []
+    },
+    {
+      "host": "Adobe InDesign 22.0.0.104",
+      "mode": "CEP filesystem",
+      "formats": 111,
+      "manualText": "passed",
+      "nativeCsvImport": "passed",
+      "twoColumnMapping": "passed",
+      "collapsibleDatabase": "passed",
+      "referenceSearch": "passed",
+      "sourceIndependentEAN13": "passed",
+      "measurementPersistence": "passed",
+      "dedicatedQR": "passed",
+      "hostInsertCall": "passed",
+      "svgExport": "passed",
+      "livePreview": "passed",
+      "authorCredit": "passed",
+      "errors": []
+    }
+  ],
+  "fatalErrorVisibility": "passed",
+  "scope": "Adobe CEP/CommonJS/AMD and file/host APIs simulated in Chromium. Native Adobe application placement is not asserted by this test."
+}

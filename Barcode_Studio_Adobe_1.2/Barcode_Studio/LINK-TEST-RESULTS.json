@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-20T13:54:50.521Z",
+  "checks": [
+    "HTTP 200",
+    "HTTP 201",
+    "HTTP 403",
+    "HTTP 404",
+    "timeout",
+    "network"
+  ],
+  "redirects": "passed",
+  "headToGetFallback": "passed",
+  "invalidSchemes": "rejected",
+  "embeddedCredentials": "rejected",
+  "corsFailure": "reported as unconfirmed, not reachable",
+  "scope": "HTTP transports are fixtures. No external URL was contacted by these tests."
+}
