@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' file:; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self' file: data:; img-src 'self' data: blob:; connect-src http: https:; object-src 'none'; base-uri 'none'">
+<title>Barvellum Suit for Adobe CC</title><link rel="stylesheet" href="style.css"><script src="bootstrap.js"></script></head>
+<body>
+<header>
+  <span class="brand-mark" aria-hidden="true"></span>
+  <div class="identity"><h1>Barvellum Suit for Adobe CC</h1><div id="host" class="host">Starting panel…</div></div>
+<span class="version">1.6.2</span>
+</header>
+<nav aria-label="Sections">
+  <button data-tab="create" aria-controls="create" aria-current="true" class="active"><span class="nav-icon" aria-hidden="true"></span>Barcode</button>
+  <button data-tab="qr" aria-controls="qr"><span class="nav-icon" aria-hidden="true"></span>QR link</button>
+  <button data-tab="database" aria-controls="database"><span class="nav-icon" aria-hidden="true"></span>Database</button>
+  <button data-tab="verify" aria-controls="verify"><span class="nav-icon" aria-hidden="true"></span>Analyze</button>
+  <button data-tab="help" aria-controls="help"><span class="nav-icon" aria-hidden="true"></span>Help</button>
+</nav>
+<main><div id="boot-status" class="notice" role="alert">Loading barcode engine…</div>
+<section id="create" class="tab workspace active">
+<div class="card editor-card">
+<div class="product-search">
+<label for="product-search">Find a product</label>
+<div class="search-field"><input id="product-search" type="search" autocomplete="off" placeholder="Reference or barcode…" aria-controls="product-matches" aria-describedby="product-search-note" aria-expanded="false"></div>
+<div id="product-matches" class="product-matches" hidden></div><p id="product-search-note" class="muted">Import products in Database.</p>
+</div>
+<div class="editor-settings">
+<h2>Barcode settings</h2>
+<div class="grid barcode-controls">
+<div><label for="format">Barcode format</label><select id="format" aria-describedby="format-hint"></select></div>
+<div><label for="module" title="X dimension">X (mm)</label><input id="module" type="number" min="0.15" max="2" step="0.01" value="0.45"></div>
+<div><label for="height" title="Bar height">Height (mm)</label><input id="height" type="number" min="5" max="150" step="0.1" value="13"></div>
+</div>
+<p id="format-hint" class="muted"></p>
+<label for="value">Data / text <span id="selected-ref" class="selected-reference"></span></label><textarea id="value" rows="2" spellcheck="false" placeholder="Choose a product above, or type data manually"></textarea>
+<div class="row compact"><button id="sample" class="secondary small">Load sample</button><button id="complete" class="secondary small">Check / calculate digit</button><label class="check live"><input id="live" type="checkbox" checked> Live</label></div>
+<div id="qr-settings" hidden><label for="qr-level">QR error correction</label><select id="qr-level"><option value="L">L — low</option><option value="M" selected>M — medium</option><option value="Q">Q — high</option><option value="H">H — highest</option></select></div>
+<div class="editor-options">
+<label class="check"><input id="show-text" type="checkbox" checked> Show human-readable text</label>
+<details class="advanced-options"><summary title="Advanced format options">Advanced</summary><div class="spec-line">Amazon Ember Regular <span>14 pt</span><span>Expanded bars</span></div><p>BWIPP options as JSON. For a link QR, use the dedicated QR link tab.</p><textarea id="extra" rows="2" spellcheck="false" placeholder='{"parsefnc":true}'></textarea></details>
+</div>
+<button id="generate" class="primary wide">Generate &amp; analyze</button>
+</div>
+</div>
+<div class="card">
+<div class="sectionhead preview-head"><h2>Barcode preview</h2><span id="preview-state" class="preview-state">No data</span></div><div class="preview-well"><div id="preview" class="preview"><span>Your barcode will appear here</span></div><div id="dimensions" class="dimensions"></div></div>
+<div id="validation" class="notice" role="status" aria-live="polite">Choose a product or enter barcode data.</div>
+<button id="use-ean13" class="secondary wide" hidden>Use EAN-13</button>
+<button id="place" class="primary wide" disabled>Insert barcode</button><div id="insert-status" class="notice" role="status" hidden></div><div class="grid export-row"><button id="svg" disabled>Export SVG</button><button id="png" disabled>PNG · 600 ppi</button></div>
+</div>
+</section>
+<section id="qr" class="tab workspace">
+<div class="card">
+<h2>QR link</h2>
+<label for="qr-url">Website / document link</label><textarea id="qr-url" rows="3" spellcheck="false" placeholder="https://example.com/manual.pdf"></textarea>
+<div class="grid"><div><label for="qr-size">QR size (mm)</label><input id="qr-size" type="number" min="10" max="200" step="1" value="30"></div><div><label for="qr-correction">Error correction</label><select id="qr-correction"><option value="L">L — low</option><option value="M" selected>M — medium</option><option value="Q">Q — high</option><option value="H">H — highest</option></select></div></div>
+<div class="grid action-row"><button id="qr-generate" class="primary">Analyze QR &amp; link</button><button id="qr-open" class="secondary" disabled>Open link in browser</button></div>
+</div>
+<div class="card">
+<div class="sectionhead preview-head"><h2>QR preview</h2><span id="qr-preview-state" class="preview-state">No link</span></div><div class="preview-well"><div id="qr-preview" class="preview qr-preview"><span>Your QR will appear here</span></div><div id="qr-dimensions" class="dimensions"></div></div>
+<div class="check-card"><div class="check-line"><span>QR reading</span><span id="qr-read-badge" class="pill">Not checked</span></div><p id="qr-read-status">The generated QR is read back and compared with your link.</p><div class="check-line"><span>Link availability</span><span id="qr-link-badge" class="pill">Not checked</span></div><p id="qr-link-status">Analyze QR &amp; link sends a connection check to the address. Some servers block automated checks.</p></div>
+<button id="qr-place" class="primary wide" disabled>Insert QR</button><div id="qr-insert-status" class="notice" role="status" hidden></div><div class="grid export-row"><button id="qr-svg" disabled>Export SVG</button><button id="qr-png" disabled>PNG · 600 ppi</button></div>
+</div>
+</section>
+<section id="database" class="tab">
+<div class="card"><div class="sectionhead"><h2>Product database</h2><span class="meta">Products <span id="count">0</span></span></div><p>Import a table with your product references and barcode values.</p>
+<div class="grid action-row">
+  <button id="choose-db" class="primary">Import XLSX / CSV / JSON…</button>
+  <button id="save-template" class="secondary">Save XLSX template…</button>
+</div>
+<input id="db-file" type="file" hidden accept=".csv,.tsv,.txt,.xlsx,.json"></div>
+<div id="mapping" hidden class="card"><label for="sheet">Worksheet</label><select id="sheet"></select><div id="columns"></div><button id="import" class="primary wide">Save database</button><p>Only Reference and Barcode are imported. Saving replaces the current database.</p></div>
+<div class="card">
+<h2>Search products</h2>
+<div id="db-status" class="notice" role="status" aria-live="polite">No database loaded.</div><input id="search" type="search" aria-label="Search database" placeholder="Reference or barcode…">
+<div class="row compact"><button id="backup" class="small secondary">Export backup</button><button id="audit" class="small secondary">Audit codes</button><button id="refresh" class="small secondary">Reload</button></div>
+<details id="product-list" class="database-list"><summary>Browse products</summary><div id="results" class="results" role="region" aria-label="Product results" tabindex="0"></div><p class="muted" id="results-count" role="status"></p><button id="more" class="wide" hidden>Show 25 more</button></details><pre id="audit-result" hidden></pre>
+</div>
+</section>
+<section id="verify" class="tab">
+<div class="card"><h2>Analyze an existing code</h2><p>Choose a sharp, upright PNG or JPEG cropped around one barcode or QR.</p>
+<label for="expected">Expected data (optional)</label><textarea id="expected" rows="2" spellcheck="false" placeholder="Compare the decoded result with this value"></textarea>
+<button id="choose-scan" class="primary wide">Choose image…</button><input id="scan-file" type="file" hidden accept="image/png,image/jpeg"></div>
+<div class="card"><h2>Scan result</h2><div id="scan-preview" class="scan-preview"></div><div id="scan-status" class="notice" role="status" aria-live="polite">Waiting for an image.</div><p class="footnote">Readers: standard QR, EAN-8/13, UPC-A/E, Code 128/39/93, ITF and Codabar. Other formats have encoder validation only.</p></div>
+</section>
+<section id="help" class="tab">
+<div class="card about-card"><span class="brand-mark" aria-hidden="true"></span><div><h2>Barvellum Suit for Adobe CC</h2><p>by André Filipe</p></div></div>
+<div class="card help-card">
+<h3>Barcode workflow</h3>
+<ol>
+  <li>In <strong>Barcode</strong>, enter a code or search for a product reference.</li>
+  <li>Select <strong>Generate &amp; analyze</strong> and review the result.</li>
+  <li>Choose <strong>Insert barcode</strong> or export the artwork as SVG or PNG.</li>
+</ol>
+<p>EAN-13 requires exactly 13 digits. If the check digit is invalid, the panel generates Code 128 with all 13 original digits. Select <strong>Use EAN-13</strong> to apply the corrected number to the current preview.</p>
+<h3>Default measurements</h3>
+<ul>
+  <li>X dimension of 0.45 mm</li>
+  <li>Regular bars 13 mm high</li>
+  <li>Vertical gap of 0.80 mm between the regular bars and text</li>
+  <li>Amazon Ember Regular at 14 pt</li>
+</ul>
+<p>In EAN-13, the gap between the leading digit and the first bar is twice the X dimension. The panel saves your settings locally and reuses them when you switch products.</p>
+<h3>Illustrator insertion</h3>
+<p>Select a visible, unlocked layer. The panel centres vector artwork on the active artboard. Standard barcodes are drawn directly in the document. Artwork with more complex SVG features is imported from a temporary document.</p>
+<p>In <strong>Layers</strong>, the editable text group takes the barcode value as its name, for example <code>5600495642348</code>.</p>
+<h3>Print checks</h3>
+<p>Bars are filled vector shapes. Direct insertion into a CMYK Illustrator document uses 100% K for black. Check the final dimensions, the clear space around the bars and readability on the printed label.</p>
+<h3>QR and link checks</h3>
+<p>In <strong>QR link</strong>, paste a URL and select <strong>Analyze QR &amp; link</strong>. The panel reads the QR image to confirm it contains the exact URL. The link check reports the server response separately, including restricted access, timeouts and browser blocks.</p>
+<h3>Data and compatibility</h3>
+<p>In <strong>Database</strong>, choose <strong>Save XLSX template…</strong> and pick a folder. Fill in the Reference and Barcode columns, then import the workbook. Both columns are formatted as text to preserve leading zeros.</p>
+<p>You can also import CSV, TSV, TXT or JSON and match the two columns. Updates retain the local product database.</p>
+<p>Close the Adobe apps before running <strong>Install.command</strong>. The panel requires CEP. Photoshop on Apple silicon requires Rosetta. See the package README for host versions and setup.</p>
+<h3>Diagnostics</h3><button id="diagnostics" class="secondary">Show diagnostics</button><pre id="diagnostic-output" hidden></pre>
+<h3>Credits</h3><p>bwip-js/BWIPP, jsQR, QuaggaJS, the ZXing-derived Code 93 reader and JSZip. Licences and source code are included.</p>
+</div>
+</section></main>
+<footer><span id="status" role="status" aria-live="polite">Starting…</span><span class="byline">by André Filipe</span></footer>
+<script src="vendor/bwip-js.js"></script><script src="vendor/jsQR.js"></script><script src="vendor/quagga.js"></script><script src="vendor/jszip.js"></script><script src="font-data.js"></script><script src="core.js"></script><script src="database.js"></script><script src="code93.js"></script><script src="scanner.js"></script><script src="link.js"></script><script src="app.js"></script>
+</body></html>
